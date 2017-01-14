@@ -1,0 +1,11 @@
+extends ./layouts/default
+
+block content
+   h1 All Users
+   if users.length
+      ul
+         each user in users
+            li #{user.name} (#{user.email}) - #{user.age} - created #{__(user.createdAt).format('MMM DD YYYY')}
+   else
+      h6 No users yet
+

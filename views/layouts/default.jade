@@ -1,0 +1,38 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="utf-8")
+        meta(name="language", content="english")
+        meta(name="viewport", content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width")
+        meta(name="title", content=locals.title || "Mongo/DocDb Test")
+        title=locals.title || "Mongo/DocDb Test"
+        link(rel="stylesheet",href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css")
+
+        block css
+
+        block head
+
+    body
+      header(role='banner').hidden-xs
+         nav.navbar(role='navigation'): .container
+             .navbar-header
+             nav(role='navigation')
+                 ul.navbar-nav.navbar-nav--left
+                     li
+                         a(data-scroll-to-anchor='', href='/users') View Users
+                     li
+                         a(data-scroll-to-anchor='', href='/add') Add User
+
+      block body
+
+          main(role='main')
+
+              block intro
+
+              block content
+
+
+   script(src="https://code.jquery.com/jquery-3.1.1.slim.min.js")
+   script(src="https://npmcdn.com/tether@1.4.0/dist/js/tether.min.js")
+   script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js")
+   block js
