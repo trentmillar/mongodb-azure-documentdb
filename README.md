@@ -4,3 +4,4 @@
 2. rename `sample.env` to `.env`
 3. change the connection string in `.env` to your MongoDb/DocumentDb database
 4. run `npm run start`
+5. open http://localhost:3000 in your browser
