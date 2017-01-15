@@ -5,7 +5,9 @@ block content
    if users.length
       ul
          each user in users
-            li #{user.name} (#{user.email}) - #{user.age} - created #{__(user.createdAt).format('MMM DD YYYY')}
+            li
+               a(href='/user/#{user.email}') #{user.name} (#{user.email}) - #{user.age} - created #{__(user.createdAt).format('MMM DD YYYY')}
+               form(method='post', action='/user/remove/#{user.email}', style='display:inline-block;'): button(type='submit').btn.btn-sm.btn-danger X
    else
       h6 No users yet
 

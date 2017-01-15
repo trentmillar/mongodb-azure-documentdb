@@ -1,25 +1,28 @@
 extends ./layouts/default
 
 block content
-   h1 Add this new user to Mongo/DocumentDb
+   h1=title
    form(method='post').form-horizontal.create-form.profile-form
       .row: .col-sm-8.col-sm-offset-2
          .form-group
             h5 Email
-            input(type='text', name='email').input.input-md.input-faded
+            input(type='text', name='email', value=user.email).input.input-md.input-faded
          .form-group
             h5 User name
-            input(type='text', name='name').input.input-md.input-faded
+            input(type='text', name='name', value=user.name).input.input-md.input-faded
          .form-group
             h5 Age
-            input(type='number', name='age').input.input-md.input-faded
+            input(type='number', name='age', value=user.age).input.input-md.input-faded
          .form-group
             h5 Comments
             #comments
+               if user.comments
+                  each comment in user.comments
+                     input(type='text', name='comment', value=comment)
             button(type='button', id='addComment').btn.btn-default Add Comment
          .form-group
             h5 Agree to T&C's
-            input(type='checkbox', name='agree').input.input-md.input-faded
+            input(type='checkbox', name='agree', checked=user.agree).input.input-md.input-faded
          .form-group
             button(type='submit', data-loading-text="Saving...").btn.btn-lg.btn-primary.btn-block Add User
 
